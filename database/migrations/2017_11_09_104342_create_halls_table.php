@@ -17,7 +17,7 @@ class CreateHallsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('row');
-            $table->integer('column')
+            $table->integer('column');
             $table->timestamps();
         });
     }

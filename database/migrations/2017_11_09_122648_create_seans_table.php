@@ -18,7 +18,7 @@ class CreateSeansTable extends Migration
             $table->integer('weekday_id');
             $table->integer('hall_id');
             $table->integer('film_id');
-            $table->integer('time_id');
+            $table->string('seans_time');
             $table->timestamps();
         });
     }

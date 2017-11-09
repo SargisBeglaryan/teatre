@@ -10,11 +10,6 @@ class Index extends Model {
 	
     protected $table = 'seans';
 
-    public function times()
-    {
-        return $this->belongsTo('App\Times', 'time_id', 'id');
-    }
-
     public function weekdays()
     {
         return $this->belongsTo('App\Weekdays', 'weekday_id', 'id');

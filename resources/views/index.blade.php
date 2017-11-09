@@ -10,7 +10,7 @@
 @section('content')
 <div class='container'>
 		<div class="token">{{ csrf_token() }}</div>
-		<div class="row">
+		<div class="row buttonBlocks">
 			<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>
 				@foreach ($object->halls as $hall)
 					<a class="hals btn" href="{{asset('halls/').'/'.$hall->id}}"><span>{{$hall->name}}</span></a>

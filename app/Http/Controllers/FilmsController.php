@@ -35,5 +35,11 @@ class FilmsController extends CrudController
        
         return $this->returnEditView();
     }
+
+    public function allSeans($id) {
+        $id=htmlspecialchars($id);
+        $allSeans = \App\Index::with('halls','films','weekdays')->where('film_id', $id)->get();
+        return view('films.filmAllSeans')->with('allSeans', $allSeans)->render();
+    }
     
 }

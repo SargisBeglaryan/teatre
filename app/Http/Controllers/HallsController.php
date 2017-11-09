@@ -36,12 +36,8 @@ class HallsController extends CrudController
 
     public function allSeans($id) {
         $id=htmlspecialchars($id);
-        $obj = new \stdClass();
-        $allSeans = \App\Index::with('halls','films', 'times')->where('id', $id)->get();
-        $seansAllIds = \App\Films::where('id', $id)->pluck('id')->all();
-        var_dump($seansAllIds);
-        //$obj->allSeans = Halls::with('seans')->where('id', $id)->get();
-        exit;
+        $allSeans = \App\Index::with('halls','films','weekdays')->where('hall_id', $id)->get();
+        return view('halls.hallAllSeans')->with('allSeans', $allSeans)->render();
     }
     
 }

@@ -1,0 +1,1 @@
+<a class='homePageLink' href='{{asset('/')}}'>Home</a>

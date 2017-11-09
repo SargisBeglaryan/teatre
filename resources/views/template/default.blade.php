@@ -21,12 +21,9 @@
     @yield('head')
 </head>
 <body>
-    <div id="fb-root"></div>
     <header>@include('template.header')</header>
     <main>
-        <div class="container">
-            @yield('content')
-        </div>
+        @yield('content')
     </main>
     <footer>@include('template.footer')</footer>
     @yield('script')

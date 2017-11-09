@@ -11,14 +11,14 @@ class IndexController extends CrudController
     public function all($entity){
         parent::all($entity); 
 
-        $this->filter = \DataFilter::source(Index::with('times', 'halls', 'weekdays', 'films'));
+        $this->filter = \DataFilter::source(Index::with('halls', 'weekdays', 'films'));
 
         $this->grid = \DataGrid::source($this->filter);
-         $this->grid->add('id', 'ID');
+        $this->grid->add('id', 'ID');
         $this->grid->add('{{$halls->name}}', 'Hall');
         $this->grid->add('{{$weekdays->name}}', 'Days of week');
         $this->grid->add('{{$films->name}}', 'Film');
-        $this->grid->add('{{$times->name}}', 'Time');
+        $this->grid->add('seans_time', 'Seans Time');
         $this->addStylesToGrid();
                  
         return $this->returnView();
@@ -33,8 +33,8 @@ class IndexController extends CrudController
         $this->edit->label('Edit Seans');
         $this->edit->add('weekdays','Day of Week','Select')->options(\App\Weekdays::pluck('name', 'id')->all())->rule('required');
         $this->edit->add('halls','Halls','Select')->options(\App\Halls::pluck('name', 'id')->all())->rule('required');
-        $this->edit->add('times','Times','Select')->options(\App\Times::pluck('name', 'id')->all())->rule('required');
         $this->edit->add('films','Films','Select')->options(\App\Films::pluck('name', 'id')->all())->rule('required');
+        $this->edit->add('seans_time', 'Seans Time', 'text')->rule('required');
        
         return $this->returnEditView();
     }
