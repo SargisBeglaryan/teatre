@@ -12,7 +12,7 @@ class Index extends Model {
 
     public function times()
     {
-        return $this->belongsTo('App\Times', 'times_id', 'id');
+        return $this->belongsTo('App\Times', 'time_id', 'id');
     }
 
     public function weekdays()
@@ -22,12 +22,12 @@ class Index extends Model {
 
     public function halls()
     {
-        return $this->belongsTo('App\Halls', 'halls_id', 'id');
+        return $this->belongsTo('App\Halls', 'hall_id', 'id');
     }
 
     public function films()
     {
-        return $this->belongsTo('App\Films', 'films_id', 'id');
+        return $this->belongsTo('App\Films', 'film_id', 'id');
     }
 
 }

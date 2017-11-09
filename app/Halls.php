@@ -10,4 +10,9 @@ class Halls extends Model {
 	
     protected $table = 'halls';
 
+     public function seans()
+    {
+        return $this->hasMany('App\Index', 'hall_id', 'id');
+    }
+
 }

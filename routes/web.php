@@ -11,6 +11,8 @@
 |
 */
 Route::any('/',['uses' => 'IndexController@index', 'as' => 'main']);
+Route::get('/halls/{id}',['uses' => 'HallsController@allSeans', 'as' => 'hallSeans']);
+Route::get('/films/{id}',['uses' => 'FilmsController@allSeans', 'as' => 'filmSeans']);
 // Route::get('/', function () {
 //     return view('welcome');
 // });
