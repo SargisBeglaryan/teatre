@@ -1,0 +1,65 @@
+.row {
+    margin-top: 80px;
+}
+.row .hals {
+    background-image: -webkit-gradient(linear, 0 0, 262 0, from(#e5ef51), to(#abdd49));
+    background-image: -webkit-linear-gradient(360deg, #e5ef51, #abdd49);
+    background-image: -moz-linear-gradient(360deg, #e5ef51, #abdd49);
+    background-image: -o-linear-gradient(360deg, #e5ef51, #abdd49);
+    background-image: linear-gradient(90deg, #e5ef51, #abdd49);
+}
+.row .films {
+	background-image: -ms-linear-gradient(top left, #EA4AA4 0%, #A943B0 80%);
+	background-image: -moz-linear-gradient(top left, #EA4AA4 0%, #A943B0 80%);
+	background-image: -o-linear-gradient(top left, #EA4AA4 0%, #A943B0 80%);
+	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #EA4AA4), color-stop(80, #A943B0));
+	background-image: -webkit-linear-gradient(top left, #EA4AA4 0%, #A943B0 80%);
+	background-image: linear-gradient(to bottom right, #EA4AA4 0%, #A943B0 80%);
+    border: none;
+}
+.row .hals, .row .films {
+    margin: 10px 10px;
+    width: 160px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 27px;
+}
+.row .hals:hover, .row .films:hover {
+    text-decoration: none;
+    color: #fff !important;
+    -webkit-animation: icon-bounce 0.5s ease-in-out;
+    animation: icon-bounce 0.5s ease-in-out;
+}
+@-webkit-keyframes icon-bounce {
+   1% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.04);
+        transform: scale(1.04);
+    }
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes icon-bounce {
+    1% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.04);
+        transform: scale(1.04);
+    }
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+.token {
+	display: none;
+}
