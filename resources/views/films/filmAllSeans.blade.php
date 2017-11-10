@@ -18,7 +18,7 @@
 						<span class="seansFilmName">{{$allSeans[$i]->films->name}}</span>
 						<span class="seansWeeday">{{$allSeans[$i]->weekdays->name}}</span>
 						<span class="seansTime">{{$allSeans[$i]->seans_time}}</span>
-						<a class="seansLink btn" href="{{asset('halls/seans').'/'.$allSeans[$i]->id}}"><span>Buy Tickets</span></a>
+						<a class="seansLink btn" href="{{asset('films/seans').'/'.$allSeans[$i]->id}}"><span>Buy Tickets</span></a>
 					</div>
 				@endfor
 			</div>

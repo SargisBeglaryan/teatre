@@ -14,6 +14,10 @@ class Index extends Model {
     {
         return $this->belongsTo('App\Weekdays', 'weekday_id', 'id');
     }
+    public function tickets()
+    {
+        return $this->hasMany('App\Weekdays', 'seans_id', 'id');
+    }
 
     public function halls()
     {

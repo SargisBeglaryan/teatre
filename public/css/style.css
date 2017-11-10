@@ -61,16 +61,18 @@
         transform: scale(1);
     }
 }
-.token {
+.token, .informBlock, .buyInformMessage, .glyphicon-refresh {
 	display: none;
 }
-.hallSeansInformation, .filmSeansInformation {
+.hallSeansInformation, .filmSeansInformation, .hallCurrentSeansInformation,
+.filmCurrentSeansInformation {
     border: solid 1px #2d015d;
     border-radius: 3px;
     padding: 10px;
     margin-bottom: 15px;
 }
-.hallSeansInformation span, .filmSeansInformation span {
+.hallSeansInformation span, .filmSeansInformation span,
+.hallCurrentSeansInformation span {
     margin-right: 15px;
 }
 .homePageLink {
@@ -94,4 +96,65 @@
     color: #fff;
     -webkit-animation: icon-bounce 0.5s ease-in-out;
     animation: icon-bounce 0.5s ease-in-out;
+}
+.oneRowContent {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.showRowNumber {
+    display: inline-block;
+    min-width: 2%;
+    height: 100%;
+    outline: solid 1px;
+    float: left;
+}
+.oneRowContent button {
+    box-shadow: 0px 0px 9px 1px rgb(161, 18, 171);
+    color: #fff;
+    background-image: -ms-linear-gradient(top left, #EA4AA4 0%, #A943B0 80%);
+    background-image: -moz-linear-gradient(top left, #EA4AA4 0%, #A943B0 80%);
+    background-image: -o-linear-gradient(top left, #EA4AA4 0%, #A943B0 80%);
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #EA4AA4), color-stop(80, #A943B0));
+    background-image: -webkit-linear-gradient(top left, #EA4AA4 0%, #A943B0 80%);
+    background-image: linear-gradient(to bottom right, #EA4AA4 0%, #A943B0 80%);
+}
+.oneRowContent button:focus {
+    color: #fff;
+}
+.informBlock {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding-top: 200px;
+    background: rgba( 255, 255, 255, .8 );
+    text-align: center;
+}
+.glyphicon-refresh {
+    font-size: 80px;
+    text-align: center;
+    animation: spin 2s linear infinite;
+    display: block;
+}
+.buyInformMessage {
+    font-size: 30px;
+    text-align: center;
+}
+.successMessage {
+    color: #a27ae1;
+}
+
+.errorMessage {
+    color: #cd201f;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

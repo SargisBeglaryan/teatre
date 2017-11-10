@@ -41,8 +41,8 @@ class IndexController extends CrudController
     public function index()
     {
         $obj = new \stdClass();
-        $obj->halls = \App\Halls::all();
-        $obj->films = \App\Films::all();
+        $obj->halls = \App\Halls::get();
+        $obj->films = \App\Films::get();
         // 
         return view('index')->with('object', $obj)->render();
     }

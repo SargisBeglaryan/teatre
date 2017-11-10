@@ -41,5 +41,12 @@ class FilmsController extends CrudController
         $allSeans = \App\Index::with('halls','films','weekdays')->where('film_id', $id)->get();
         return view('films.filmAllSeans')->with('allSeans', $allSeans)->render();
     }
+
+    public function currentSeans($seans, $id) {
+        $id=htmlspecialchars($id);
+        $buyedTicket = \App\Tickets::select('row', 'column')->where('seans_id', $id)->get();
+        $currentSeans = \App\Index::with('halls','films','weekdays')->where('id', $id)->first();
+        return view('films.filmCurrentSeans', compact('buyedTicket','currentSeans','id'))->render();
+    }
     
 }
