@@ -12,6 +12,14 @@ class TicketsController extends CrudController
 		$row = trim(htmlspecialchars($request->row));
 		$column = trim(htmlspecialchars($request->column));
 		$seans_id = trim(htmlspecialchars($request->seansId));
+		$checkTicket = Tickets::where([
+								    ['row', '=', $row],
+								    ['column', '=', $column],
+								    ['seans_id','=', $seans_id]
+								])->get();
+		if (count($checkTicket)) {
+			return ['msg'=>'Error! This places ticket already buyed!', 'status'=>false];
+		}
 		$insertResult = Tickets::insert([
 			['row' => $row, 'column' => $column, 'seans_id' => $seans_id],
 		]);

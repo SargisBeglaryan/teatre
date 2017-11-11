@@ -35,7 +35,7 @@
 								@endphp
 							@endif
 							@endfor
-							<button type="button" data-row="{{$i}}" data-column="{{$j}}" data-seansId="{{$id}}" class="columnsNumbers btn {{$disabledClass}}" style="width:{{100/intval($currentSeans->halls->column)-1.5}}%">{{$j}}</button>
+							<button type="button" data-row="{{$i}}" data-column="{{$j}}" data-seansId="{{$id}}" class="columnsNumbers btn {{$disabledClass}}" style="width:{{100/intval($currentSeans->halls->column)-1.5}}%" {{$disabledClass}}>{{$j}}</button>
 						@endfor
 						</div>
 					@endfor
