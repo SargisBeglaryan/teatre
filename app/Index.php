@@ -16,7 +16,16 @@ class Index extends Model {
     }
     public function tickets()
     {
-        return $this->hasMany('App\Weekdays', 'seans_id', 'id');
+        return $this->hasMany('App\Tickets', 'seans_id', 'id');
+    }
+
+    protected static function boot() {
+        parent::boot();
+
+        static::deleting(function($seans) { // before delete() method call this
+             $seans->tickets()->delete();
+             // do the rest of the cleanup...
+        });
     }
 
     public function halls()

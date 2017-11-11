@@ -10,7 +10,7 @@ class Tickets extends Model {
 	
     protected $table = 'tickets';
 
-     public function seans()
+    public function seans()
     {
         return $this->belongsTo('App\Index', 'seans_id', 'id');
     }
