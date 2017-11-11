@@ -16,14 +16,18 @@ class TicketsController extends CrudController
 								    ['row', '=', $row],
 								    ['column', '=', $column],
 								    ['seans_id','=', $seans_id],
-								    ['created_at','=', date("Y-m-d")],
-								    ['updated_at','=', date("Y-m-d")]
 								])->get();
 		if (count($checkTicket)) {
 			return ['msg'=>'Error! This places ticket already buyed!', 'status'=>false];
 		}
 		$insertResult = Tickets::insert([
-			['row' => $row, 'column' => $column, 'seans_id' => $seans_id],
+			[
+				'row' => $row,
+				'column' => $column,
+				'seans_id' => $seans_id,
+				'created_at' => date("Y-m-d"),
+			    'updated_at'=> date("Y-m-d")
+			]
 		]);
 		if($insertResult){
 			return ['msg'=>'Congratulations! Ticket was buyed successfully', 'status'=>true];

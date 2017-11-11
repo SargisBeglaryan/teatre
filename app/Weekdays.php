@@ -10,13 +10,13 @@ class Weekdays extends Model {
 	
     protected $table = 'weekdays';
 
+    public function seans()
+    {
+        return $this->belongsTo('App\Index', 'weekday_id', 'id');
+    }
+
     protected static function boot() {
         parent::boot();
-
-        public function seans()
-	    {
-	        return $this->belongsTo('App\Index', 'weekday_id', 'id');
-	    }
 
         static::deleting(function($weekdays) { // before delete() method call this
              $weekdays->seans()->delete();
