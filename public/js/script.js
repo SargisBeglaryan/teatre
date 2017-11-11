@@ -17,7 +17,7 @@ $(document).ready(function(){
 			success: function(data) {
 				if(data['status'] == true){
 					var buyClass = 'successMessage';
-					currentButton.addClass('disabled');
+					currentButton.addClass('disabled').attr('disabled', true);
 				} else {
 					var buyClass = 'errorMessage';
 					$('.buyInformMessage').addClass(buyClass)
